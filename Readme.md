@@ -9,9 +9,9 @@ Diseñar un Script automatizado en bash - shell que permita la construccion de u
 2. Crear un script con el nombre automation.sh y les dejo el modelo en el repo , que contendra lo siguiente:
 
 y no se olviden darle permiso
-´´´
+```
 chmod u+x automation.sh
-´´´
+```
 
 2.1 Que Permita crear una carpeta temporal llamada "tempdir" y a los subdirectorios 
 tempdir/templates y tempdir/static
@@ -22,7 +22,7 @@ tempdir/templates y tempdir/static
 
 2.4 Que informacion debe tener el dockerfile
 
-´´´
+```
     FROM python
     RUN pip install flask
     COPY ./static /home/myapp/static/
@@ -30,31 +30,31 @@ tempdir/templates y tempdir/static
     COPY desafio2_app.py /home/myapp/
     EXPOSE 5050
     CMD python3 /home/myapp/desafio2_app.py
-´´´
+```
 
 2.5 El mismo script debe permitir la contrucción de la aplicación con 
 
-´´´
+```
 docker build -t nombreapp .
-´´´
+```
 2.6  Ademas que quede iniciando la aplicación con 
-´´´
+```
 docker run -t -d -p 5050:5050 --name nombreapprunning nombreapp
-´´´
+```
 
 2.7 y como ultimo paso del script que tenga salida 
-´´´
+```
 docker ps -a
-´´´
+```
 2.8. Si la construccion es correcta, recomiendo miren los logs con 
-´´´
+```
 docker logs "CONTAINER ID"
-´´´
+```
 2.9 Pueden validar en el navegador con http://localhost:5050 o revisen el ip con docker inspect
 
-´´´
+```
 docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' container_name_or_id
-´´´
+```
 
 ⌨️ con ❤️ por [roxsross](https://github.com/roxsross) 😊
 
