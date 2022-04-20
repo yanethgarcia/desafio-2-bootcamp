@@ -1,0 +1,25 @@
+{% extends "base_template.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+            {% if post_id %}
+                Modificando el post {{ post_id }}
+            {% else %}
+                Nuevo post
+            {% endif %}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    {% block content %}
+        {% if post_id %}
+            Modificando el post {{ post_id }}
+        {% else %}
+            Nuevo post
+        {% endif %}
+    {% endblock %}
+</body>
+</html>

@@ -1,0 +1,17 @@
+{% extends "base_template.html" %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %}
+        {{ slug_title }}
+        {% endblock %}
+    </title>
+</head>
+<body>
+    {% block content %}
+        Mostrando el post {{ slug_title }}
+    {% endblock %}
+</body>
+</html>
